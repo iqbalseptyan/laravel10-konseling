@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="{{ route($route . 'konselor') }}" class="nav-link {{ Route::currentRouteName() == $route . 'konselor' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Konselor</p>
                             </a>

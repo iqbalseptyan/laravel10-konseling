@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\KelasController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\KonselorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,5 +51,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::patch('siswa/perbarui/{siswa}', 'update')->name('admin/siswa/perbarui');
 
         Route::delete('siswa/hapus/{siswa}', 'destroy')->name('admin/siswa/hapus');
+    });
+
+    Route::controller(KonselorController::class)->group(function () {
+        Route::get('konselor', 'index')->name('admin/konselor');
+
+        Route::get('konselor/tambah', 'create')->name('admin/konselor/tambah');
+        Route::post('konselor/simpan', 'store')->name('admin/konselor/simpan');
+
+        Route::get('konselor/ubah/{konselor}/{user}', 'edit')->name('admin/konselor/ubah');
+        Route::patch('konselor/perbarui/{konselor}', 'update')->name('admin/konselor/perbarui');
+
+        Route::delete('konselor/hapus/{konselor}', 'destroy')->name('admin/konselor/hapus');
     });
 });
