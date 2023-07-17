@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KelasController;
+use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
@@ -37,5 +38,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::patch('kelas/perbarui/{kelas}', 'update')->name('admin/kelas/perbarui');
 
         Route::delete('kelas/hapus/{kelas}', 'destroy')->name('admin/kelas/hapus');
+    });
+
+    Route::controller(SiswaController::class)->group(function () {
+        Route::get('siswa', 'index')->name('admin/siswa');
+
+        Route::get('siswa/tambah', 'create')->name('admin/siswa/tambah');
+        Route::post('siswa/simpan', 'store')->name('admin/siswa/simpan');
+
+        Route::get('siswa/ubah/{siswa}', 'edit')->name('admin/siswa/ubah');
+        Route::patch('siswa/perbarui/{siswa}', 'update')->name('admin/siswa/perbarui');
+
+        Route::delete('siswa/hapus/{siswa}', 'destroy')->name('admin/siswa/hapus');
     });
 });

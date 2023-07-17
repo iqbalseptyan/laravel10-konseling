@@ -57,21 +57,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route($route . 'siswa') }}"
+                                class="nav-link {{ Route::currentRouteName() == $route . 'siswa' ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Siswa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="./index2.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Konselor</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Siswa</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
-
-
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
