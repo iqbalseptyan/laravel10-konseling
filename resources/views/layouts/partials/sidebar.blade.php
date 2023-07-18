@@ -35,6 +35,7 @@
                 @elseif(Auth::user()->level == 1)
                     @include('layouts.partials.menu.konselor')
                 @else
+                    @include('layouts.partials.menu.siswa')
                 @endif
 
                 <li class="nav-item">

@@ -10,6 +10,10 @@ use App\Http\Controllers\Konselor\JadwalBimbinganController;
 use App\Http\Controllers\Konselor\KasusController;
 use App\Http\Controllers\Konselor\KasusSiswaController;
 use App\Http\Controllers\KonselorController;
+use App\Http\Controllers\Siswa\DashboardController as SiswaDashboardController;
+use App\Http\Controllers\Siswa\JadwalBimbinganController as SiswaJadwalBimbinganController;
+use App\Http\Controllers\Siswa\KasusSiswaController as SiswaKasusSiswaController;
+use App\Http\Controllers\Siswa\PesertaBimbinganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,5 +113,23 @@ Route::group(['prefix' => 'konselor', 'middleware' => ['auth', 'konselor']], fun
         Route::patch('jadwal-bimbingan/perbarui/{jadwalBimbingan}', 'update')->name('konselor/jadwal-bimbingan/perbarui');
 
         Route::delete('jadwal-bimbingan/hapus/{jadwalBimbingan}', 'destroy')->name('konselor/jadwal-bimbingan/hapus');
+    });
+});
+
+Route::group(['prefix' => 'siswa', 'middleware' => ['auth', 'siswa']], function () {
+    Route::controller(SiswaDashboardController::class)->group(function () {
+        Route::get('dashboard', 'index')->name('siswa/dashboard');
+    });
+
+    Route::controller(SiswaKasusSiswaController::class)->group(function () {
+        Route::get('kasus-siswa', 'index')->name('siswa/kasus-siswa');
+    });
+
+    Route::controller(SiswaJadwalBimbinganController::class)->group(function () {
+        Route::get('jadwal-bimbingan', 'index')->name('siswa/jadwal-bimbingan');
+    });
+
+    Route::controller(PesertaBimbinganController::class)->group(function () {
+        Route::post('peserta-bimbingan', 'store')->name('siswa/peserta-bimbingan/simpan');
     });
 });
