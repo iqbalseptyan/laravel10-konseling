@@ -8,25 +8,14 @@
     </a>
 </li>
 
-<li class="nav-item ">
-    <a href="#" class="nav-link {{ Route::currentRouteName() == 'konselor/kasus' ? 'active' : '' }}">
-        <i class="nav-icon fas fa-database"></i>
+<li class="nav-item">
+    <a href="{{ route('konselor/kasus') }}"
+        class="nav-link {{ Route::currentRouteName() == 'konselor/kasus' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-newspaper"></i>
         <p>
-            Master Data
-            <i class="right fas fa-angle-left"></i>
+            Catatan Kasus
         </p>
     </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item">
-            <a href="{{ route('konselor/kasus') }}"
-                class="nav-link {{ Route::currentRouteName() == 'konselor/kasus' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-newspaper"></i>
-                <p>
-                    Bentuk Kasus
-                </p>
-            </a>
-        </li>
-    </ul>
 </li>
 
 <li class="nav-item">

@@ -45,6 +45,7 @@
                                         <th>No</th>
                                         <th>Nama Bimbingan</th>
                                         <th>Tanggal Bimbingan</th>
+                                        <th>Peserta Bimbingan</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,15 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $jb->nama }}</td>
                                             <td>{{ $jb->tgl_bimbingan }}</td>
+                                            <td>
+                                                <ol>
+                                                    @forelse ($jb->peserta_bimbingan as $pb)
+                                                        <li>{{ $pb->siswa->nama }}</li>
+                                                    @empty
+                                                        belum ada yang daftar
+                                                    @endforelse
+                                                </ol>
+                                            </td>
                                             <td>
                                                 <a name="" id="" class="btn btn-sm btn-default "
                                                     href="{{ route('konselor/jadwal-bimbingan/ubah', $jb) }}"

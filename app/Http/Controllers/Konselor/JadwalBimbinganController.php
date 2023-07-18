@@ -12,7 +12,7 @@ class JadwalBimbinganController extends Controller
 {
     public function index()
     {
-        $jadwalBimbingan = JadwalBimbingan::all();
+        $jadwalBimbingan = JadwalBimbingan::with('peserta_bimbingan.siswa')->get();
 
         $data = ['title' => 'Halaman Kasus', 'jadwalBimbingan' => $jadwalBimbingan];
 
