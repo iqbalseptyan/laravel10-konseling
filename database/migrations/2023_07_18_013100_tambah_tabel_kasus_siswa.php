@@ -16,6 +16,9 @@ return new class extends Migration
             $table->foreignId('id_siswa');
             $table->foreignId('id_kasus');
             $table->timestamps();
+
+            $table->foreign('id_siswa')->references('id')->on('tbl_siswa')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('id_kasus')->references('id')->on('tbl_kasus')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
