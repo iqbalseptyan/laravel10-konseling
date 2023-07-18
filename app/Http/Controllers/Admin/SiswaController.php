@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Kelas;
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -36,16 +37,26 @@ class SiswaController extends Controller
             'alamat' => ['required'],
             'tgl_lahir' => ['required'],
             'jenis_kelamin' => ['required'],
+            'username' => ['required', 'lowercase', 'unique:tbl_user', 'string'],
+            'password' => ['required'],
         ]);
 
-        $validated['id_kelas'] = $request->input('kelas');
-        Siswa::create($validated);
+        // insert username & password table user
+        $validatedUser = ['username' => $validated['username'], 'password' => $validated['password'], 'level' => 2];
+        $user = User::create($validatedUser);
+
+        $validatedSiswa = $request->except(['username', 'password', 'kelas']);
+        $validatedSiswa['id_user'] =  $user->id;
+        $validatedSiswa['id_kelas'] = $validated['kelas'];
+        Siswa::create($validatedSiswa);
+
         return redirect()->route('admin/siswa')->with('success', 'berhasil menambahkan siswa');
     }
 
     public function edit(Siswa $siswa)
     {
-        $data = ['title' => 'Halaman Ubah Siswa', 'siswa' => $siswa, 'kelas' => Kelas::all()];
+
+        $data = ['title' => 'Halaman Ubah Siswa', 'siswa' => Siswa::with('user')->find($siswa)->first(), 'kelas' => Kelas::all()];
 
         return view('admin.siswa.edit', $data);
     }

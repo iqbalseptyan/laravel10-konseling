@@ -20,21 +20,21 @@
         <li class="nav-item ">
             <a href="{{ route($route . 'kelas') }}"
                 class="nav-link {{ Route::currentRouteName() == $route . 'kelas' ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-home nav-icon"></i>
                 <p>Kelas</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ route($route . 'siswa') }}"
                 class="nav-link {{ Route::currentRouteName() == $route . 'siswa' ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-users nav-icon"></i>
                 <p>Siswa</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{ route($route . 'konselor') }}"
                 class="nav-link {{ Route::currentRouteName() == $route . 'konselor' ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-user-tie nav-icon"></i>
                 <p>Konselor</p>
             </a>
         </li>

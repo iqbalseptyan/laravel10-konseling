@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tbl_siswa', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_user');
             $table->foreignId('id_kelas');
             $table->string('nisn');
             $table->string('nama');
@@ -20,6 +21,9 @@ return new class extends Migration
             $table->timestamp('tgl_lahir');
             $table->string('jenis_kelamin');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('tbl_user')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('id_kelas')->references('id')->on('tbl_kelas')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

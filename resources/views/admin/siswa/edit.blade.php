@@ -117,6 +117,36 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="col-lg-12">
+                                        <div class="border p-2">
+                                            <h5>Autentikasi</h5>
+                                            <div class="form-group">
+                                                <label for="">Username</label>
+                                                <input type="text"
+                                                    class="form-control @error('username') is-invalid @enderror"
+                                                    name="username" id="username" aria-describedby="helpId"
+                                                    placeholder="Username"
+                                                    value="{{ old('username', $siswa->user->username) }}">
+                                                @error('username')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Password</label>
+                                                <input type="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
+                                                    name="password" id="password" aria-describedby="helpId"
+                                                    placeholder="Password">
+                                                @error('password')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
