@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Konselor;
+namespace App\Http\Controllers\Siswa;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pesan;
@@ -13,25 +13,26 @@ class PesanController extends Controller
     public function pesan_masuk()
     {
         $pesanMasuk = Pesan::with('tujuan.siswa')->where('id_tujuan', Auth::id())->get();
+
         $data = ['title' => 'Halaman Pesan Masuk', 'pesanMasuk' => $pesanMasuk];
-        return view('konselor.pesan.masuk.index', $data);
+        return view('siswa.pesan.masuk.index', $data);
     }
 
     public function pesan_keluar()
     {
-        $pesanKeluar = Pesan::with('tujuan.siswa')->where('id_asal', Auth::id())->get();
-        // dd($pesanKeluar);
+        $pesanKeluar = Pesan::with(['asal.siswa', 'tujuan.siswa'])->where('id_asal', Auth::id())->get();
+
         $data = ['title' => 'Halaman Pesan Keluar', 'pesanKeluar' => $pesanKeluar];
-        return view('konselor.pesan.keluar.index', $data);
+        return view('siswa.pesan.keluar.index', $data);
     }
 
     public function pesan_keluar_create()
     {
-        $user = User::with('siswa')->where('level', '<>', 0)->where('level', 2)->get();
 
+        $user = User::with('konselor')->where('level', '<>', 0)->where('level', 1)->get();
 
         $data = ['title' => 'Halaman Tambah Pesan Keluar', 'user' => $user];
-        return view('konselor.pesan.keluar.create', $data);
+        return view('siswa.pesan.keluar.create', $data);
     }
 
     public function pesan_keluar_store(Request $request)
@@ -48,6 +49,6 @@ class PesanController extends Controller
         $validatedData['id_tujuan'] = $validated['tujuan'];
 
         Pesan::create($validatedData);
-        return redirect()->route('konselor/pesan-keluar')->with('success', 'berhasil menambahkan pesan keluar');
+        return redirect()->route('siswa/pesan-keluar')->with('success', 'berhasil menambahkan pesan keluar');
     }
 }

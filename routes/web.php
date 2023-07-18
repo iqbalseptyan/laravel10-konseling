@@ -15,6 +15,8 @@ use App\Http\Controllers\KonselorController;
 use App\Http\Controllers\Siswa\DashboardController as SiswaDashboardController;
 use App\Http\Controllers\Siswa\JadwalBimbinganController as SiswaJadwalBimbinganController;
 use App\Http\Controllers\Siswa\KasusSiswaController as SiswaKasusSiswaController;
+use App\Http\Controllers\Siswa\KomentarPesanController as SiswaKomentarPesanController;
+use App\Http\Controllers\Siswa\PesanController as SiswaPesanController;
 use App\Http\Controllers\Siswa\PesertaBimbinganController;
 use Illuminate\Support\Facades\Route;
 
@@ -148,5 +150,20 @@ Route::group(['prefix' => 'siswa', 'middleware' => ['auth', 'siswa']], function 
 
     Route::controller(PesertaBimbinganController::class)->group(function () {
         Route::post('peserta-bimbingan', 'store')->name('siswa/peserta-bimbingan/simpan');
+    });
+
+    Route::controller(SiswaPesanController::class)->group(function () {
+        Route::get('pesan-masuk', 'pesan_masuk')->name('siswa/pesan-masuk');
+
+        Route::get('pesan-keluar', 'pesan_keluar')->name('siswa/pesan-keluar');
+
+        Route::get('pesan-keluar/tambah', 'pesan_keluar_create')->name('siswa/pesan-keluar/tambah');
+        Route::post('pesan-keluar/simpan', 'pesan_keluar_store')->name('siswa/pesan-keluar/simpan');
+    });
+
+    Route::controller(SiswaKomentarPesanController::class)->group(function () {
+        Route::get('komentar-pesan/{pesan}', 'pesan')->name('siswa/komentar-pesan');
+
+        Route::post('komentar-pesan/{pesan}', 'pesan_store')->name('siswa/komentar-pesan/simpan');
     });
 });

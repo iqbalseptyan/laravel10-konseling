@@ -37,8 +37,8 @@
         </p>
     </a>
 </li>
-<li class="nav-item menu-open">
-    <a href="#" class="nav-link active">
+<li class="nav-item ">
+    <a href="#" class="nav-link ">
         <i class="nav-icon fas fa-mail-bulk"></i>
         <p>
             Pesan
@@ -47,7 +47,7 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="./index.html" class="nav-link ">
+            <a href="{{ route('konselor/pesan-masuk') }}" class="nav-link {{ Route::currentRouteName() == 'konselor/pesan-masuk' ? 'active' : '' }}">
                 <i class="fas fa-inbox nav-icon"></i>
                 <p>Masuk</p>
             </a>

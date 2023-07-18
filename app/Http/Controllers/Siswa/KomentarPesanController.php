@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Konselor;
+namespace App\Http\Controllers\Siswa;
 
 use App\Http\Controllers\Controller;
 use App\Models\KomentarPesan;
 use App\Models\Pesan;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +16,7 @@ class KomentarPesanController extends Controller
 
         $data = ['title' => 'Halaman Komentar Pesan', 'pesan' => $pesan, 'komentarPesan' => $komentarPesan];
 
-        return view('konselor.komentar.pesan', $data);
+        return view('siswa.komentar.pesan', $data);
     }
 
     public function pesan_store(Pesan $pesan, Request $request)

@@ -18,4 +18,9 @@ class Pesan extends Model
     {
         return $this->belongsTo(User::class, 'id_tujuan');
     }
+
+    public function asal(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'id_asal');
+    }
 }

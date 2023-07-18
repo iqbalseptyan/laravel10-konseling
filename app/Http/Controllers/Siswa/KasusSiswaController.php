@@ -11,8 +11,10 @@ class KasusSiswaController extends Controller
 {
     public function index()
     {
+        $kasusSiswa = KasusSiswa::all();
+        // dd($kasusSiswa);
         $kasusSiswa = KasusSiswa::with(['siswa.user', 'kasus'])->whereHas('siswa', function ($query) {
-            return $query->where('id_user', '=', Auth::id());
+            return $query->where('id_user', Auth::id());
         })->get();
 
         $data = ['title' => 'Halaman Kasus', 'kasusSiswa' => $kasusSiswa];
