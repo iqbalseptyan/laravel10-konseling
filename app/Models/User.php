@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Siswa::class, 'id_user');
     }
+
+    public function konselor(): HasOne
+    {
+        return $this->hasOne(Konselor::class, 'id_user');
+    }
 }

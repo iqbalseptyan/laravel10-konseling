@@ -37,3 +37,27 @@
         </p>
     </a>
 </li>
+<li class="nav-item menu-open">
+    <a href="#" class="nav-link active">
+        <i class="nav-icon fas fa-mail-bulk"></i>
+        <p>
+            Pesan
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="./index.html" class="nav-link ">
+                <i class="fas fa-inbox nav-icon"></i>
+                <p>Masuk</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('konselor/pesan-keluar') }}"
+                class="nav-link {{ Route::currentRouteName() == 'konselor/pesan-keluar' ? 'active' : '' }}">
+                <i class="fab fa-telegram-plane nav-icon"></i>
+                <p>Keluar</p>
+            </a>
+        </li>
+    </ul>
+</li>

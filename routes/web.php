@@ -9,6 +9,8 @@ use App\Http\Controllers\Konselor\DashboardController as KonselorDashboardContro
 use App\Http\Controllers\Konselor\JadwalBimbinganController;
 use App\Http\Controllers\Konselor\KasusController;
 use App\Http\Controllers\Konselor\KasusSiswaController;
+use App\Http\Controllers\Konselor\KomentarPesanController;
+use App\Http\Controllers\Konselor\PesanController;
 use App\Http\Controllers\KonselorController;
 use App\Http\Controllers\Siswa\DashboardController as SiswaDashboardController;
 use App\Http\Controllers\Siswa\JadwalBimbinganController as SiswaJadwalBimbinganController;
@@ -113,6 +115,21 @@ Route::group(['prefix' => 'konselor', 'middleware' => ['auth', 'konselor']], fun
         Route::patch('jadwal-bimbingan/perbarui/{jadwalBimbingan}', 'update')->name('konselor/jadwal-bimbingan/perbarui');
 
         Route::delete('jadwal-bimbingan/hapus/{jadwalBimbingan}', 'destroy')->name('konselor/jadwal-bimbingan/hapus');
+    });
+
+    Route::controller(PesanController::class)->group(function () {
+        Route::get('pesan-masuk', 'pesan_masuk')->name('konselor/pesan-masuk');
+
+        Route::get('pesan-keluar', 'pesan_keluar')->name('konselor/pesan-keluar');
+
+        Route::get('pesan-keluar/tambah', 'pesan_keluar_create')->name('konselor/pesan-keluar/tambah');
+        Route::post('pesan-keluar/simpan', 'pesan_keluar_store')->name('konselor/pesan-keluar/simpan');
+    });
+
+    Route::controller(KomentarPesanController::class)->group(function () {
+        Route::get('komentar-pesan/{pesan}', 'pesan')->name('konselor/komentar-pesan');
+
+        Route::post('komentar-pesan/{pesan}', 'pesan_store')->name('konselor/komentar-pesan/simpan');
     });
 });
 
