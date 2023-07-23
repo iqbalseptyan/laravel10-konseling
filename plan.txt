@@ -1,0 +1,5 @@
+tambahkan input catatan konseling
+side bar : catatan konseling (konselor,siswa)
+Profil siswa : nama, kelas, jenis kelamin, total kasus, catatan konseling
+edit profil konselor dan siswa (foto dan password)
+print pdf
