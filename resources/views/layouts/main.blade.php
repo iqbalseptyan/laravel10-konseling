@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="{{ url('') }}/dist/img/logo ytck.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nama Sekolah | {{ $title }}</title>
+    <title>BK SMA Alfa Centauri | {{ $title }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -52,8 +53,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://namasekolah.com">Nama Sekolah</a>.</strong>
-            All rights reserved.
+            <strong>Copyright &copy; 2023 <a href="https://smaalfacentauri.sch.id/">SMA Alfa Centauri</a>.</strong>
+            Taqwa Cerdas Kreatif
         </footer>
 
         <!-- Control Sidebar -->

@@ -58,7 +58,7 @@
                                             <td>{{ $s->nisn }}</td>
                                             <td>{{ $s->nama }}</td>
                                             <td>{{ $s->alamat }}</td>
-                                            <td>{{ $s->tgl_lahir }}</td>
+                                            <td>{{ date("Y-m-d",strtotime($s->tgl_lahir)) }}</td>
                                             <td>
                                                 <a name="" id="" class="btn btn-sm btn-default "
                                                     href="{{ route('admin/siswa/ubah', $s) }}" role="button"><i

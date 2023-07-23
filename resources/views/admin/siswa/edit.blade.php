@@ -87,7 +87,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="">Tanggal Lahir</label>
-                                            <input type="datetime-local"
+                                            <input type="date"
                                                 class="form-control @error('tgl_lahir') is-invalid @enderror"
                                                 name="tgl_lahir" id="tgl_lahir" placeholder="Tanggal Lahir"
                                                 value="{{ old('tgl_lahir', $siswa->tgl_lahir) }}">

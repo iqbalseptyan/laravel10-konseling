@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in</title>
+    <link rel="icon" href="{{ url('') }}/dist/img/logo ytck.png">
+    <title>Bimbingan Konseling SMA Alfa Centauri | Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -20,12 +21,12 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="https://smaalfacentauri.sch.id/"><b>Bimbingan dan Konseling</b><br>SMA Alfa Centauri</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Silahkan Login</p>
 
                 <form action="{{ route('auth/authenticate') }}" method="post">
                     @csrf

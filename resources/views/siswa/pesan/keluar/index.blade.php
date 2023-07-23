@@ -34,7 +34,7 @@
                                 <a name="" id="" class="btn btn-sm btn-primary"
                                     href="{{ route('siswa/pesan-keluar/tambah') }}" role="button"><i
                                         class="fas fa-plus"></i>
-                                    Compose</a>
+                                    Tambah</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
