@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KelasController;
+use App\Http\Controllers\Admin\KonselorController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -11,7 +12,7 @@ use App\Http\Controllers\Konselor\KasusController;
 use App\Http\Controllers\Konselor\KasusSiswaController;
 use App\Http\Controllers\Konselor\KomentarPesanController;
 use App\Http\Controllers\Konselor\PesanController;
-use App\Http\Controllers\KonselorController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\DashboardController as SiswaDashboardController;
 use App\Http\Controllers\Siswa\JadwalBimbinganController as SiswaJadwalBimbinganController;
 use App\Http\Controllers\Siswa\KasusSiswaController as SiswaKasusSiswaController;
@@ -165,5 +166,17 @@ Route::group(['prefix' => 'siswa', 'middleware' => ['auth', 'siswa']], function 
         Route::get('komentar-pesan/{pesan}', 'pesan')->name('siswa/komentar-pesan');
 
         Route::post('komentar-pesan/{pesan}', 'pesan_store')->name('siswa/komentar-pesan/simpan');
+    });
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::controller(ProfileController::class)->group(function () {
+        Route::get('profile', 'index')->name('profile');
+
+        Route::patch('profile/password', 'update_password')->name('profile/password');
+
+        Route::patch('profile/foto', 'update_foto')->name('profile/foto');
+
+        Route::get('profile/show/{user}', 'show')->name('profile/show');
     });
 });

@@ -56,9 +56,10 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $s->kelas->nama }}</td>
                                             <td>{{ $s->nisn }}</td>
-                                            <td>{{ $s->nama }}</td>
+                                            <td> <a href="{{ route('profile/show', $s->id_user) }}" target="_blank"
+                                                    rel="noopener noreferrer">{{ $s->nama }}</a></td>
                                             <td>{{ $s->alamat }}</td>
-                                            <td>{{ date("Y-m-d",strtotime($s->tgl_lahir)) }}</td>
+                                            <td>{{ date('Y-m-d', strtotime($s->tgl_lahir)) }}</td>
                                             <td>
                                                 <a name="" id="" class="btn btn-sm btn-default "
                                                     href="{{ route('admin/siswa/ubah', $s) }}" role="button"><i
