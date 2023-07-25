@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="{{ url('') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- bootstrap-select -->
+    <link rel="stylesheet" href="{{ url('') }}/dist/css/bootstrap-select.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -109,9 +112,14 @@
     <script src="{{ url('') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="{{ url('') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+    <!-- bootstrap-select -->
+    <script src="{{ url('') }}/dist/js/bootstrap-select.min.js"></script>
+
     <script>
         $('#datatable').DataTable({})
     </script>
+
+
 </body>
 
 </html>

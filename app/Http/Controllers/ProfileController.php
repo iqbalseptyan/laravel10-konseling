@@ -15,6 +15,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
+        // dd(asset('storage/' . $user->foto));
         if (Auth::user()->level == 1) {
             $user['nama'] = Konselor::where('id_user', $user->id)->first()->nama;
         } elseif (Auth::user()->level == 2) {

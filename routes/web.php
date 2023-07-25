@@ -11,6 +11,7 @@ use App\Http\Controllers\Konselor\JadwalBimbinganController;
 use App\Http\Controllers\Konselor\KasusController;
 use App\Http\Controllers\Konselor\KasusSiswaController;
 use App\Http\Controllers\Konselor\KomentarPesanController;
+use App\Http\Controllers\Konselor\KonselingController;
 use App\Http\Controllers\Konselor\PesanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Siswa\DashboardController as SiswaDashboardController;
@@ -133,6 +134,18 @@ Route::group(['prefix' => 'konselor', 'middleware' => ['auth', 'konselor']], fun
         Route::get('komentar-pesan/{pesan}', 'pesan')->name('konselor/komentar-pesan');
 
         Route::post('komentar-pesan/{pesan}', 'pesan_store')->name('konselor/komentar-pesan/simpan');
+    });
+
+    Route::controller(KonselingController::class)->group(function () {
+        Route::get('konseling', 'index')->name('konselor/konseling');
+
+        Route::get('konseling/tambah', 'create')->name('konselor/konseling/tambah');
+        Route::post('konseling/simpan', 'store')->name('konselor/konseling/simpan');
+
+        Route::get('konseling/ubah/{konseling}', 'edit')->name('konselor/konseling/ubah');
+        Route::patch('konseling/perbarui/{konseling}', 'update')->name('konselor/konseling/perbarui');
+
+        Route::delete('konseling/hapus/{konseling}', 'destroy')->name('konselor/konseling/hapus');
     });
 });
 

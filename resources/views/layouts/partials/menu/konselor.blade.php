@@ -19,6 +19,16 @@
 </li>
 
 <li class="nav-item">
+    <a href="{{ route('konselor/konseling') }}"
+        class="nav-link {{ Route::currentRouteName() == 'konselor/konseling' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-paperclip"></i>
+        <p>
+            Catatan Konseling
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
     <a href="{{ route('konselor/kasus-siswa') }}"
         class="nav-link {{ Route::currentRouteName() == 'konselor/kasus-siswa' ? 'active' : '' }}">
         <i class="nav-icon fas fa-pen"></i>

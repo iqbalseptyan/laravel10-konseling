@@ -1,6 +1,9 @@
-tambahkan input catatan konseling
-side bar : catatan konseling (konselor,siswa)
+Konselor :
+- catatan konseling (beres)
+- edit profil (foto dan password) (beres)
+
 Profil siswa : 
-- nama, kelas, jenis kelamin, total kasus, catatan konseling (beres)
-- edit profil konselor dan siswa (foto dan password) (beres)
-print pdf
+- nama, kelas, jenis kelamin, total kasus (beres)
+- catatan konseling
+- edit profil (foto dan password) (beres)
+- print pdf
