@@ -1,9 +1,10 @@
 Konselor :
 - catatan konseling (beres)
 - edit profil (foto dan password) (beres)
+- print pdf (beres)
+
 
 Profil siswa : 
 - nama, kelas, jenis kelamin, total kasus (beres)
-- catatan konseling
+- catatan konseling (beres)
 - edit profil (foto dan password) (beres)
-- print pdf

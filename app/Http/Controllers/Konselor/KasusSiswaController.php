@@ -14,7 +14,7 @@ class KasusSiswaController extends Controller
     {
         $kasusSiswa = KasusSiswa::with(['siswa', 'kasus'])->get();
 
-        $data = ['title' => 'Halaman Kasus', 'kasusSiswa' => $kasusSiswa];
+        $data = ['title' => 'Data Kasus Siswa', 'kasusSiswa' => $kasusSiswa];
 
         return view('konselor.kasus-siswa.index', $data);
     }

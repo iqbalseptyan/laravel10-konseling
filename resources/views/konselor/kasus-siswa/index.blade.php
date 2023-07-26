@@ -39,7 +39,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive">
-                            <table id="datatable" class="table table-bordered table-striped table-hover">
+                            <table id="datatableKasus" class="table table-bordered table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -56,7 +56,10 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $ks->kasus->kategori }}</td>
                                             <td>{{ $ks->kasus->bentuk }}</td>
-                                            <td>{{ $ks->siswa->nama }}</td>
+                                            <td>
+                                                <a href="{{ route('profile/siswa', $ks->siswa->id) }}" target="_blank"
+                                                    rel="noopener noreferrer">{{ $ks->siswa->nama }}</a>
+                                            </td>
                                             <td>{{ $ks->siswa->kelas->nama }}</td>
                                             <td>
                                                 <a name="" id="" class="btn btn-sm btn-default "

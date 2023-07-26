@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kasus Siswa</h1>
+                    <h1 class="m-0">Catatan Konseling</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -29,31 +29,38 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Kasus</h3>
+                            <h3 class="card-title">Data Konseling</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive">
-                            <table id="datatables" class="table table-bordered table-striped table-hover">
+                            <table id="datatable" class="table table-bordered table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kategori Kasus</th>
-                                        <th>Bentuk Kasus</th>
+                                        <th>Nama Konselor</th>
+                                        <th>Topik Konseling</th>
+                                        <th>Tanggal Konseling</th>
                                         <th>Nama Siswa</th>
-                                        <th>Kelas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kasusSiswa as $ks)
+                                    @foreach ($konseling as $k)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $ks->kasus->kategori }}</td>
-                                            <td>{{ $ks->kasus->bentuk }}</td>
+                                            <td>{{ $k->konselor->nama }}</td>
+                                            <td>{{ $k->topik }}</td>
+                                            <td>{{ $k->tanggal }}</td>
                                             <td>
-                                                <a href="{{ route('profile/siswa', $ks->siswa->id) }}" target="_blank"
-                                                    rel="noopener noreferrer">{{ $ks->siswa->nama }}</a>
+                                                <ul>
+                                                    @foreach ($k->konseling_siswas as $ks)
+                                                        <li>
+                                                            <a href="{{ route('profile/siswa', $ks->siswa->id) }}"
+                                                                target="_blank" rel="noopener noreferrer">
+                                                                {{ $ks->siswa->nama }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
                                             </td>
-                                            <td>{{ $ks->siswa->kelas->nama }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

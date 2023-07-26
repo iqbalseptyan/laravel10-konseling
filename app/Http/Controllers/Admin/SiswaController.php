@@ -16,14 +16,14 @@ class SiswaController extends Controller
     {
         $siswa = Siswa::with('kelas')->get();
 
-        $data = ['title' => 'Halaman Kelas', 'siswa' => $siswa];
+        $data = ['title' => 'Data Siswa', 'siswa' => $siswa];
 
         return view('admin.siswa.index', $data);
     }
 
     public function create()
     {
-        $data = ['title' => 'Halaman Tambah Siswa', 'kelas' => Kelas::all()];
+        $data = ['title' => 'Halaman Tambah Data Siswa', 'kelas' => Kelas::all()];
 
         return view('admin.siswa.create', $data);
     }
@@ -56,7 +56,7 @@ class SiswaController extends Controller
     public function edit(Siswa $siswa)
     {
 
-        $data = ['title' => 'Halaman Ubah Siswa', 'siswa' => Siswa::with('user')->find($siswa)->first(), 'kelas' => Kelas::all()];
+        $data = ['title' => 'Halaman Ubah Data Siswa', 'siswa' => Siswa::with('user')->find($siswa)->first(), 'kelas' => Kelas::all()];
 
         return view('admin.siswa.edit', $data);
     }

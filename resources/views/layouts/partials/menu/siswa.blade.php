@@ -19,6 +19,16 @@
 </li>
 
 <li class="nav-item">
+    <a href="{{ route('siswa/konseling') }}"
+        class="nav-link {{ Route::currentRouteName() == 'siswa/konseling' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-paperclip"></i>
+        <p>
+            Catatan Konseling
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
     <a href="{{ route('siswa/jadwal-bimbingan') }}"
         class="nav-link {{ Route::currentRouteName() == 'siswa/jadwal-bimbingan' ? 'active' : '' }}">
         <i class="nav-icon fas fa-calendar"></i>
@@ -38,7 +48,8 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="{{route('siswa/pesan-masuk')}}" class="nav-link {{ Route::currentRouteName() == 'siswa/pesan-masuk' ? 'active' : '' }}">
+            <a href="{{ route('siswa/pesan-masuk') }}"
+                class="nav-link {{ Route::currentRouteName() == 'siswa/pesan-masuk' ? 'active' : '' }}">
                 <i class="fas fa-inbox nav-icon"></i>
                 <p>Masuk</p>
             </a>

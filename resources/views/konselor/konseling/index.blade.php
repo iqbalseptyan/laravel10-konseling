@@ -60,7 +60,11 @@
                                             <td>
                                                 <ul>
                                                     @foreach ($k->konseling_siswas as $ks)
-                                                        <li>{{ $ks->siswa->nama }}</li>
+                                                        <li>
+                                                            <a href="{{ route('profile/siswa', $ks->siswa->id) }}"
+                                                                target="_blank" rel="noopener noreferrer">
+                                                                {{ $ks->siswa->nama }}</a>
+                                                        </li>
                                                     @endforeach
                                                 </ul>
                                             </td>

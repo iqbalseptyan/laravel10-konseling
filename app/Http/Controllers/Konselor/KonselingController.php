@@ -19,7 +19,6 @@ class KonselingController extends Controller
 
         $konseling = Konseling::with(['konselor', 'konseling_siswas.siswa'])->where('id_konselor', $user->konselor->id)->get();
 
-        // dd($konseling);
         $data = ['title' => 'Halaman Konseling', 'konseling' => $konseling];
 
         return view('konselor.konseling.index', $data);

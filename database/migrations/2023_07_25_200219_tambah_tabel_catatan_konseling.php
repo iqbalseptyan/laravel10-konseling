@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_konselor');
             $table->string('topik');
-            $table->string('tanggal');
+            $table->timestamp('tanggal');
             $table->string('catatan');
             $table->timestamps();
 

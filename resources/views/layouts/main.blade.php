@@ -117,6 +117,40 @@
 
     <script>
         $('#datatable').DataTable({})
+        $('#datatableKasus').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": [{
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3, 4]
+                }
+            }, {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [1, 2, 3, 4]
+                }
+            }, "colvis"]
+
+        }).buttons().container().appendTo('#datatableKasus_wrapper .col-md-6:eq(0)');
+        $('#datatableSiswa').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": [{
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, "colvis"]
+
+        }).buttons().container().appendTo('#datatableSiswa_wrapper .col-md-6:eq(0)');
     </script>
 
 
