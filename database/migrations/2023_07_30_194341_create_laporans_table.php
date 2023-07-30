@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('file');
-            $table->timestamp('tgl_laporan');
+            $table->date('tgl_laporan');
             $table->timestamps();
         });
     }
