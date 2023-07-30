@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KelasController;
 use App\Http\Controllers\Admin\KonselorController;
+use App\Http\Controllers\Admin\LaporanController as AdminLaporanController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Konselor\KasusController;
 use App\Http\Controllers\Konselor\KasusSiswaController;
 use App\Http\Controllers\Konselor\KomentarPesanController;
 use App\Http\Controllers\Konselor\KonselingController;
+use App\Http\Controllers\Konselor\LaporanController;
 use App\Http\Controllers\Konselor\PesanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfilSiswaController;
@@ -79,6 +81,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::patch('konselor/perbarui/{konselor}', 'update')->name('admin/konselor/perbarui');
 
         Route::delete('konselor/hapus/{konselor}', 'destroy')->name('admin/konselor/hapus');
+    });
+
+    Route::controller(AdminLaporanController::class)->group(function () {
+        Route::get('laporan', 'index')->name('admin/laporan');
     });
 });
 
@@ -148,6 +154,18 @@ Route::group(['prefix' => 'konselor', 'middleware' => ['auth', 'konselor']], fun
         Route::patch('konseling/perbarui/{konseling}', 'update')->name('konselor/konseling/perbarui');
 
         Route::delete('konseling/hapus/{konseling}', 'destroy')->name('konselor/konseling/hapus');
+    });
+
+    Route::controller(LaporanController::class)->group(function () {
+        Route::get('laporan', 'index')->name('konselor/laporan');
+
+        Route::get('laporan/tambah', 'create')->name('konselor/laporan/tambah');
+        Route::post('laporan/simpan', 'store')->name('konselor/laporan/simpan');
+
+        Route::get('laporan/ubah/{laporan}', 'edit')->name('konselor/laporan/ubah');
+        Route::patch('laporan/perbarui/{laporan}', 'update')->name('konselor/laporan/perbarui');
+
+        Route::delete('laporan/hapus/{laporan}', 'destroy')->name('konselor/laporan/hapus');
     });
 });
 

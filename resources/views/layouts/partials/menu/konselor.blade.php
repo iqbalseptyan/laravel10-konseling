@@ -47,6 +47,17 @@
         </p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('konselor/laporan') }}"
+        class="nav-link {{ Route::currentRouteName() == 'konselor/laporan' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-sticky-note"></i>
+        <p>
+            Laporan
+        </p>
+    </a>
+</li>
+
 <li class="nav-item ">
     <a href="#" class="nav-link ">
         <i class="nav-icon fas fa-mail-bulk"></i>

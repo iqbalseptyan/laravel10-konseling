@@ -40,3 +40,13 @@
         </li>
     </ul>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('admin/laporan') }}"
+        class="nav-link {{ Route::currentRouteName() == 'admin/laporan' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-sticky-note"></i>
+        <p>
+            Laporan
+        </p>
+    </a>
+</li>
