@@ -51,7 +51,7 @@ class LaporanController extends Controller
     {
         $validated = $request->validate([
             'nama' => ['required'],
-            'file' => ['required', 'mimetypes:application/pdf'],
+            'file' => ['required', 'mimes:pdf'],
             'tgl_laporan' => ['required'],
         ]);
 
