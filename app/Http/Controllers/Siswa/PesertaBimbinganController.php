@@ -21,6 +21,6 @@ class PesertaBimbinganController extends Controller
         $pesertaBimbingan = ['id_jadwal_bimbingan' => (int)$request->input('id_jadwal_bimbingan'), 'id_siswa' => $user->siswa->id];
         PesertaBimbingan::create($pesertaBimbingan);
 
-        return redirect()->route('siswa/jadwal-bimbingan')->with('success', 'berhasil memilih jadwal bimbingan');
+        return redirect()->route('siswa/jadwal-bimbingan')->with('success', 'berhasil memilih jadwal');
     }
 }

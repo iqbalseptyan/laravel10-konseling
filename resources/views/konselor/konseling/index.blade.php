@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Catatan Konseling</h1>
+                    <h1 class="m-0">Catatan Bimbingan/Konseling</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -29,7 +29,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Konseling</h3>
+                            <h3 class="card-title">Data Bimbingan/Konseling</h3>
                             <div class="card-tools">
                                 <a name="" id="" class="btn btn-sm btn-primary"
                                     href="{{ route('konselor/konseling/tambah') }}" role="button"><i
@@ -44,9 +44,10 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Konselor</th>
-                                        <th>Topik Konseling</th>
-                                        <th>Tanggal Konseling</th>
+                                        <th>Topik</th>
+                                        <th>Tanggal</th>
                                         <th>Nama Siswa</th>
+                                        <th>isi catatan</th>
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -68,6 +69,7 @@
                                                     @endforeach
                                                 </ul>
                                             </td>
+                                            <td>{{ $k->catatan }}</td>
                                             <td>
                                                 <a name="" id="" class="btn btn-sm btn-default "
                                                     href="{{ route('konselor/konseling/ubah', $k) }}" role="button"><i

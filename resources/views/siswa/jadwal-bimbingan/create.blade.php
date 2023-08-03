@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Jadwal Bimbingan</h1>
+                    <h1 class="m-0">Tambah Jadwal Bimbingan/Konseling</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -22,7 +22,7 @@
                         <form action="{{ route('konselor/jadwal-bimbingan/simpan') }}" method="post">
                             @csrf
                             <div class="card-header">
-                                <h3 class="card-title">Form Tambah Jadwal Bimbingan</h3>
+                                <h3 class="card-title">Form Tambah Jadwal Bimbingan/Konseling</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body ">

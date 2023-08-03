@@ -57,7 +57,7 @@ class KonselingController extends Controller
             ]);
         }
 
-        return redirect()->route('konselor/konseling')->with('success', 'berhasil menambahkan catatan konseling');
+        return redirect()->route('konselor/konseling')->with('success', 'berhasil menambahkan catatan bk');
     }
 
     public function edit(Konseling $konseling)
@@ -98,13 +98,13 @@ class KonselingController extends Controller
             ]);
         }
 
-        return redirect()->route('konselor/konseling')->with('success', 'berhasil mengubah catatan konseling');
+        return redirect()->route('konselor/konseling')->with('success', 'berhasil mengubah catatan bk');
     }
 
 
     public function destroy(Konseling $konseling)
     {
         $konseling->delete();
-        return redirect()->route('konselor/konseling')->with('success', 'berhasil menghapus catatan konseling');
+        return redirect()->route('konselor/konseling')->with('success', 'berhasil menghapus catatan bk');
     }
 }

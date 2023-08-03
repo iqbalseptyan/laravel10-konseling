@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Catatan Konseling</h1>
+                    <h1 class="m-0">Tambah Catatan Bimbingan/Konseling</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -49,10 +49,10 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="">Tanggal Konseling</label>
+                                            <label for="">Tanggal</label>
                                             <input type="datetime-local"
                                                 class="form-control @error('tgl_konseling') is-invalid @enderror"
-                                                name="tgl_konseling" id="tgl_konseling" placeholder="Tanggal Konseling"
+                                                name="tgl_konseling" id="tgl_konseling" placeholder="Tanggal"
                                                 value="{{ old('tgl_konseling') }}">
                                             @error('tgl_konseling')
                                                 <div class="invalid-feedback">
@@ -63,10 +63,10 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">Topik Konseling</label>
+                                            <label for="">Topik</label>
                                             <input type="text"
                                                 class="form-control @error('topik_konseling') is-invalid @enderror"
-                                                name="topik_konseling" id="topik_konseling" placeholder="Topik Konseling"
+                                                name="topik_konseling" id="topik_konseling" placeholder="Topik"
                                                 value="{{ old('topik_konseling') }}">
                                             @error('topik_konseling')
                                                 <div class="invalid-feedback">

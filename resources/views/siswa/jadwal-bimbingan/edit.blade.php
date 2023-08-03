@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Ubah Jadwal Bimbingan</h1>
+                    <h1 class="m-0">Ubah Jadwal Bimbingan/Konseling</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -23,7 +23,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="card-header">
-                                <h3 class="card-title">Form Ubah Jadwal Bimbingan</h3>
+                                <h3 class="card-title">Form Ubah Jadwal Bimbingan/Konseling</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body ">

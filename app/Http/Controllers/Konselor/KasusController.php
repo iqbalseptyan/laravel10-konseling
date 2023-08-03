@@ -31,7 +31,7 @@ class KasusController extends Controller
         ]);
 
         Kasus::create($validated);
-        return redirect()->route('konselor/kasus')->with('success', 'berhasil menambahkan catatan kasus');
+        return redirect()->route('konselor/kasus')->with('success', 'berhasil menambahkan jenis kasus');
     }
 
     public function edit(Kasus $kasus)
@@ -49,13 +49,13 @@ class KasusController extends Controller
         ]);
 
         $kasus->update($validated);
-        return redirect()->route('konselor/kasus')->with('success', 'berhasil mengubah catatan kasus');
+        return redirect()->route('konselor/kasus')->with('success', 'berhasil mengubah jenis kasus');
     }
 
 
     public function destroy(Kasus $kasus)
     {
         $kasus->delete();
-        return redirect()->route('konselor/kasus')->with('success', 'berhasil menghapus catatan kasus');
+        return redirect()->route('konselor/kasus')->with('success', 'berhasil menghapus jenis kasus');
     }
 }

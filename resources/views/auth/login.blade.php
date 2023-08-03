@@ -15,18 +15,16 @@
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.css">
+
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo">
-            <a href="https://smaalfacentauri.sch.id/"><b>Bimbingan dan Konseling</b><br>SMA Alfa Centauri</a>
-        </div>
-        <!-- /.login-logo -->
+        
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Silahkan Login</p>
+            <a class="login-logo" href="https://smaalfacentauri.sch.id/"><center><b>Bimbingan dan Konseling</b><br>SMA Alfa Centauri</center></a>
 
                 <form action="{{ route('auth/authenticate') }}" method="post">
                     @csrf
@@ -58,7 +56,7 @@
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
                 </form>
 
             </div>

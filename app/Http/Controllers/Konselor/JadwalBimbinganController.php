@@ -21,7 +21,7 @@ class JadwalBimbinganController extends Controller
 
     public function create()
     {
-        $data = ['title' => 'Halaman Tambah Jadwal Bimbingan'];
+        $data = ['title' => 'Halaman Tambah Jadwal Bimbingan/Konseling'];
 
         return view('konselor.jadwal-bimbingan.create', $data);
     }
@@ -36,7 +36,7 @@ class JadwalBimbinganController extends Controller
         $konselor = Konselor::where('id_user', Auth::id())->first();
         $validated['id_konselor'] = $konselor->id;
         JadwalBimbingan::create($validated);
-        return redirect()->route('konselor/jadwal-bimbingan')->with('success', 'berhasil menambahkan jadwal bimbingan');
+        return redirect()->route('konselor/jadwal-bimbingan')->with('success', 'berhasil menambahkan jadwal');
     }
 
     public function edit(JadwalBimbingan $jadwalBimbingan)
@@ -57,7 +57,7 @@ class JadwalBimbinganController extends Controller
         $validated['id_konselor'] = $konselor->id;
         $jadwalBimbingan->update($validated);
 
-        return redirect()->route('konselor/jadwal-bimbingan')->with('success', 'berhasil mengubah jadwal bimbingan');
+        return redirect()->route('konselor/jadwal-bimbingan')->with('success', 'berhasil mengubah jadwal');
     }
 
 

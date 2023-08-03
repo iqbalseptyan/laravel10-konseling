@@ -13,7 +13,7 @@ class JadwalBimbinganController extends Controller
     {
         $jadwalBimbingan = JadwalBimbingan::with('peserta_bimbingan.siswa')->get();
 
-        $data = ['title' => 'Halaman Jadwal Bimbingan', 'jadwalBimbingan' => $jadwalBimbingan, 'date' => Carbon::now()->toDateString()];
+        $data = ['title' => 'Halaman Jadwal Bimbingan/Konseling', 'jadwalBimbingan' => $jadwalBimbingan, 'date' => Carbon::now()->toDateString()];
 
         return view('siswa.jadwal-bimbingan.index', $data);
     }

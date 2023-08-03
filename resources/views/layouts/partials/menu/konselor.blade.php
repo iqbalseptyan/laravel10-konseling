@@ -9,31 +9,32 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('konselor/kasus') }}"
-        class="nav-link {{ Route::currentRouteName() == 'konselor/kasus' ? 'active' : '' }}">
-        <i class="nav-icon fas fa-newspaper"></i>
+    <a href="{{ route('konselor/konseling') }}"
+        class="nav-link {{ Route::currentRouteName() == 'konselor/konseling' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-paperclip"></i>
         <p>
-            Catatan Kasus
+            Catatan BK
         </p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('konselor/konseling') }}"
-        class="nav-link {{ Route::currentRouteName() == 'konselor/konseling' ? 'active' : '' }}">
-        <i class="nav-icon fas fa-paperclip"></i>
+    <a href="{{ route('konselor/kasus') }}"
+        class="nav-link {{ Route::currentRouteName() == 'konselor/kasus' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-newspaper"></i>
         <p>
-            Catatan Konseling
+            Jenis Kasus
         </p>
     </a>
 </li>
+
 
 <li class="nav-item">
     <a href="{{ route('konselor/kasus-siswa') }}"
         class="nav-link {{ Route::currentRouteName() == 'konselor/kasus-siswa' ? 'active' : '' }}">
         <i class="nav-icon fas fa-pen"></i>
         <p>
-            Input Kasus
+            Kasus Siswa
         </p>
     </a>
 </li>
@@ -43,7 +44,7 @@
         class="nav-link {{ Route::currentRouteName() == 'konselor/jadwal-bimbingan' ? 'active' : '' }}">
         <i class="nav-icon fas fa-calendar"></i>
         <p>
-            Jadwal Bimbingan
+            Jadwal BK
         </p>
     </a>
 </li>
