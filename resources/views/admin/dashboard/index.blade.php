@@ -69,10 +69,7 @@
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Line</a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,7 +77,7 @@
                         <div class="card-body">
                             <div class="tab-content p-0">
                                 <!-- Morris chart - Sales -->
-                                <div class="chart tab-pane active">
+                                <div class="chart tab-pane active" id="revenue-chart">
                                     <canvas id="myChart"></canvas>
                                 </div>
                                 <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
