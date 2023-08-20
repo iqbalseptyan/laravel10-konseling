@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KelasController;
 use App\Http\Controllers\Admin\KonselorController;
 use App\Http\Controllers\Admin\LaporanController as AdminLaporanController;
+use App\Http\Controllers\Admin\PengumumanController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -47,6 +48,18 @@ Route::get('logout', [LogoutController::class, 'logout'])->name('auth/logout');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin/dashboard');
 
+    Route::controller(PengumumanController::class)->group(function () {
+        Route::get('pengumuman', 'index')->name('admin/pengumuman');
+
+        Route::get('pengumuman/tambah', 'create')->name('admin/pengumuman/tambah');
+        Route::post('pengumuman/simpan', 'store')->name('admin/pengumuman/simpan');
+
+        Route::get('pengumuman/ubah/{pengumuman}', 'edit')->name('admin/pengumuman/ubah');
+        Route::patch('pengumuman/perbarui/{pengumuman}', 'update')->name('admin/pengumuman/perbarui');
+
+        Route::delete('pengumuman/hapus/{pengumuman}', 'destroy')->name('admin/pengumuman/hapus');
+    });
+
     Route::controller(KelasController::class)->group(function () {
         Route::get('kelas', 'index')->name('admin/kelas');
 
@@ -85,6 +98,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::controller(AdminLaporanController::class)->group(function () {
         Route::get('laporan', 'index')->name('admin/laporan');
+
+        Route::get('laporan/tambah', 'create')->name('admin/laporan/tambah');
+        Route::post('laporan/simpan', 'store')->name('admin/laporan/simpan');
+
+        Route::get('laporan/ubah/{laporan}', 'edit')->name('admin/laporan/ubah');
+        Route::patch('laporan/perbarui/{laporan}', 'update')->name('admin/laporan/perbarui');
+
+        Route::delete('laporan/hapus/{laporan}', 'destroy')->name('admin/laporan/hapus');
     });
 });
 

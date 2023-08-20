@@ -30,12 +30,6 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Data Jadwal</h3>
-                            <div class="card-tools">
-                                <a name="" id="" class="btn btn-sm btn-primary"
-                                    href="{{ route('konselor/jadwal-bimbingan/tambah') }}" role="button"><i
-                                        class="fas fa-plus"></i>
-                                    Tambah</a>
-                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive">

@@ -49,15 +49,6 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a href="{{ route('konselor/laporan') }}"
-        class="nav-link {{ Route::currentRouteName() == 'konselor/laporan' ? 'active' : '' }}">
-        <i class="nav-icon fas fa-sticky-note"></i>
-        <p>
-            Laporan
-        </p>
-    </a>
-</li>
 
 <li class="nav-item ">
     <a href="#" class="nav-link ">
@@ -69,7 +60,8 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="{{ route('konselor/pesan-masuk') }}" class="nav-link {{ Route::currentRouteName() == 'konselor/pesan-masuk' ? 'active' : '' }}">
+            <a href="{{ route('konselor/pesan-masuk') }}"
+                class="nav-link {{ Route::currentRouteName() == 'konselor/pesan-masuk' ? 'active' : '' }}">
                 <i class="fas fa-inbox nav-icon"></i>
                 <p>Masuk</p>
             </a>

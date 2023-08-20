@@ -151,8 +151,56 @@
             }, "colvis"]
 
         }).buttons().container().appendTo('#datatableSiswa_wrapper .col-md-6:eq(0)');
+        $('#datatableKegiatan').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": [{
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5]
+                }
+            }, "colvis"]
+
+        }).buttons().container().appendTo('#datatableKegiatan_wrapper .col-md-6:eq(0)');
     </script>
 
+    @if (Route::currentRouteName() == 'admin/dashboard')
+        <script>
+            const year = new Date().getFullYear();
+            let grafik = {!! json_encode($grafik) !!}
+            const ctx = document.getElementById('myChart');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: grafik.map(({
+                        bulan
+                    }) => bulan),
+                    datasets: [{
+                        label: 'Data Kasus ' + year,
+                        data: grafik.map(({
+                            data
+                        }) => data),
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    @endif
 
 </body>
 

@@ -8,6 +8,16 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route($route . 'pengumuman') }}"
+        class="nav-link {{ Route::currentRouteName() == $route . 'pengumuman' ? 'active' : '' }}">
+        <i class="nav-icon fas fa-info"></i>
+        <p>
+            Pengumuman
+        </p>
+    </a>
+</li>
+
 <li class="nav-item menu-open">
     <a href="#" class="nav-link ">
         <i class="nav-icon fas fa-database"></i>
