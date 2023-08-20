@@ -115,6 +115,14 @@
     <!-- bootstrap-select -->
     <script src="{{ url('') }}/dist/js/bootstrap-select.min.js"></script>
 
+    <!-- Summernote -->
+    <script src="{{ url('') }}/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- CodeMirror -->
+    <script src="{{ url('') }}/plugins/codemirror/codemirror.js"></script>
+    <script src="{{ url('') }}/plugins/codemirror/mode/css/css.js"></script>
+    <script src="{{ url('') }}/plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="{{ url('') }}/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
     <script>
         $('#datatable').DataTable({})
         $('#datatableKasus').DataTable({
@@ -202,6 +210,19 @@
         </script>
     @endif
 
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
 </body>
 
 </html>

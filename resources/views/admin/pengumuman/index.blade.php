@@ -47,7 +47,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($pengumuman as $p)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $p->judul }}</td>
+                                            <td>
+                                                <a name="" id="" class="btn btn-sm btn-default "
+                                                    href="{{ route('admin/pengumuman/ubah', $p) }}" role="button"><i
+                                                        class="fas fa-pencil-alt "></i>
+                                                    Ubah</a>
 
+                                                <form action="{{ route('admin/pengumuman/hapus', $p) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-default"
+                                                        onclick="return confirm('Yakin akan menghapus data ini?')"><i
+                                                            class="fas fa-trash-alt"></i>
+                                                        Hapus</button>
+                                                </form>
+                                                <a name="" id="" class="btn btn-sm btn-default "
+                                                    href="{{ route('admin/pengumuman/detail', $p) }}" role="button"><i
+                                                        class="fas fa-pencil-alt "></i>
+                                                    detail</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\KasusSiswa;
 use App\Models\Kelas;
 use App\Models\Konselor;
+use App\Models\Pengumuman;
 use App\Models\Siswa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -24,7 +25,6 @@ class DashboardController extends Controller
             ->whereRaw("YEAR(created_at) = $year")
             ->get();
 
-        // $grafik = ['asd', 'asds'];
         for ($i = 1; $i <= 12; $i++) {
             $grafik[] = ['bulan' => date("F", mktime(0, 0, 0, $i, 1)), 'data' => 0];
             foreach ($kasusSiswa as $ks) {
@@ -33,9 +33,15 @@ class DashboardController extends Controller
                 }
             }
         }
-        // dd($grafik);
 
-        $data = ['title' => 'Halaman Dashboard', 'siswa' => $siswa, 'konselor' => $konselor, 'kelas' => $kelas, 'grafik' => $grafik];
+        $pengumuman = Pengumuman::all();
+
+        $data = [
+            'title' => 'Halaman Dashboard',
+            'siswa' => $siswa, 'konselor' => $konselor,
+            'kelas' => $kelas, 'grafik' => $grafik,
+            'pengumuman' => $pengumuman
+        ];
         return view('admin.dashboard.index', $data);
     }
 }

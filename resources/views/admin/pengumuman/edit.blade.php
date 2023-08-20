@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Ubah Kelas</h1>
+                    <h1 class="m-0">Ubah Pengumuman</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -19,22 +19,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <form action="{{ route('admin/kelas/perbarui', $kelas) }}" method="post">
+                        <form action="{{ route('admin/pengumuman/perbarui', $pengumuman) }}" method="post">
                             @csrf
                             @method('PATCH')
                             <div class="card-header">
-                                <h3 class="card-title">Form Tambah Kelas</h3>
+                                <h3 class="card-title">Form Ubah Pengumuman</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body ">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">Nama Kelas</label>
-                                            <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                                name="nama" id="nama" aria-describedby="helpId"
-                                                placeholder="Nama kelas" value="{{ old('nama', $kelas->nama) }}">
-                                            @error('nama')
+                                            <label for="">Judul Pengumuman</label>
+                                            <input type="text" class="form-control @error('judul') is-invalid @enderror"
+                                                name="judul" id="judul" placeholder="Judul Pengumuman"
+                                                value="{{ old('judul', $pengumuman->judul) }}">
+                                            @error('judul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Text Pengumuman</label>
+                                            <textarea id="summernote" class="form-control  @error('keterangan') is-invalid @enderror" name="keterangan"> </textarea>
+                                            @error('keterangan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

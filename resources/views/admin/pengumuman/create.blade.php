@@ -19,20 +19,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <form action="{{ route('admin/kelas/simpan') }}" method="post">
+                        <form action="{{ route('admin/pengumuman/simpan') }}" method="post">
                             @csrf
                             <div class="card-header">
-                                <h3 class="card-title">Form Tambah Kelas</h3>
+                                <h3 class="card-title">Form Tambah Pengumuman</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body ">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="">Nama Kelas</label>
-                                            <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                                name="nama" id="nama" aria-describedby="helpId" placeholder="">
-                                            @error('nama')
+                                            <label for="">Judul Pengumuman</label>
+                                            <input type="text" class="form-control @error('judul') is-invalid @enderror"
+                                                name="judul" id="judul" placeholder="Judul Pengumuman">
+                                            @error('judul')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Text Pengumuman</label>
+                                            <textarea id="summernote" class="form-control  @error('keterangan') is-invalid @enderror" name="keterangan"> </textarea>
+                                            @error('keterangan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

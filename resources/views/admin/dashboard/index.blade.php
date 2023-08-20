@@ -89,16 +89,16 @@
                     <!-- /.card -->
                 </div>
                 <div class="col-lg-6">
-                    <div class="card">
+                    <div class="card" style="height: 380px;">
                         <div class="card-header">
-                            Header
+                            Data Pengumuman
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <p class="card-text">Text</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            Footer
+                        <div class="card-body py-2" style=" overflow-y: auto">
+                            @foreach ($pengumuman as $p)
+                                <a href="{{ route('admin/pengumuman/detail', $p) }}">
+                                    {{ $p->judul }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

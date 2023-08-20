@@ -58,6 +58,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::patch('pengumuman/perbarui/{pengumuman}', 'update')->name('admin/pengumuman/perbarui');
 
         Route::delete('pengumuman/hapus/{pengumuman}', 'destroy')->name('admin/pengumuman/hapus');
+
+        Route::get('pengumuman/detail/{pengumuman}', 'show')->name('admin/pengumuman/detail');
     });
 
     Route::controller(KelasController::class)->group(function () {
